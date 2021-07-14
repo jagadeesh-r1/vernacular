@@ -1,0 +1,9 @@
+version: '3'
+
+services: 
+    web:
+        build: .
+        command: ls 
+        command: source /app/startserver.sh
+        ports: 
+            - 5001:8000
