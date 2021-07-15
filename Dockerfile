@@ -1,16 +1,24 @@
 FROM python:3
 
-WORKDIR /app
+ENV PYTHONUNBUFFERED=1
 
-COPY . /app
+WORKDIR /code
 
-RUN pip install -r requirements.txt 
+# COPY . /code
 
-EXPOSE 8000
+COPY requirements.txt /code/
 
-RUN python /app/validate/manage.py check --deploy
+RUN pip install -r requirements.txt
 
-STOPSIGNAL SIGTERM
+COPY . /code/
 
-CMD ["/app/startserver.sh"]
+# RUN pip install -r requirements.txt 
+
+# EXPOSE 8000
+
+# RUN python /app/validate/manage.py check --deploy
+
+# STOPSIGNAL SIGTERM
+
+# CMD ["/app/startserver.sh"]
 
