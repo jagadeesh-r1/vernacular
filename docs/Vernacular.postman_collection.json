@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "43a7384b-1596-45b9-8944-06b1fb863270",
+		"name": "Vernacular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API 1 example",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"invalid_trigger\": \"invalid_ids_stated\",\n  \"key\": \"ids_stated\",\n  \"name\": \"govt_id\",\n  \"reuse\": true,\n  \"support_multiple\": true,\n  \"pick_first\": false,\n  \"supported_values\": [\n    \"pan\",\n    \"aadhaar\",\n    \"college\",\n    \"corporate\",\n    \"dl\",\n    \"voter\",\n    \"passport\",\n    \"local\"\n  ],\n  \"type\": [\n    \"id\"\n  ],\n  \"validation_parser\": \"finite_values_entity\",\n  \"values\": [\n    {\n      \"entity_type\": \"id\",\n      \"value\": \"college\"\n    },\n    {\n      \"entity_type\": \"id\",\n      \"value\": \"aadhaar\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/validate_finite_values",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"validate_finite_values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 2 example",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"invalid_trigger\": \"invalid_age\",\n  \"key\": \"age_stated\",\n  \"name\": \"age\",\n  \"reuse\": true,\n  \"pick_first\": false,\n  \"type\": [\n    \"number\"\n  ],\n  \"validation_parser\": \"numeric_values_entity\",\n  \"constraint\": \"x>=18 and x<=30\",\n  \"support_multiple\": true,\n  \"var_name\": \"x\",\n  \"values\": [\n    {\n      \"entity_type\": \"number\",\n      \"value\": 23\n    },\n    {\n      \"entity_type\": \"number\",\n      \"value\": 20\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/validate_numeric_values",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"validate_numeric_values"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
