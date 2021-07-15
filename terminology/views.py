@@ -13,7 +13,10 @@ def index(request):
 
 @csrf_exempt
 @api_view(['POST'])
-def finite_values_entity(request):
+def finite_values_entity(request) -> Response:
+    """
+    This function is used to extract the data needed to validate
+    """
     data = request.data
     values = data["values"]
     supported_values = data["supported_values"]
@@ -28,7 +31,10 @@ def finite_values_entity(request):
 
 @csrf_exempt
 @api_view(['POST'])
-def numeric_values_entity(request):
+def numeric_values_entity(request) -> Response:
+    """
+    This function is used to extract the data needed to validate
+    """
     data = request.data
     values = data["values"]
     constraint = data["constraint"]
