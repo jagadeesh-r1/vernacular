@@ -1,24 +1,15 @@
-FROM python:3
+ARG PYTHON_VERSION=3.7.0-alpine3.8
+
+FROM python:${PYTHON_VERSION}
 
 ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
 
-# COPY . /code
+RUN pip install --upgrade pip
 
 COPY requirements.txt /code/
 
 RUN pip install -r requirements.txt
 
 COPY . /code/
-
-# RUN pip install -r requirements.txt 
-
-# EXPOSE 8000
-
-# RUN python /app/validate/manage.py check --deploy
-
-# STOPSIGNAL SIGTERM
-
-# CMD ["/app/startserver.sh"]
-

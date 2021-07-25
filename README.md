@@ -3,7 +3,7 @@
 
 Hi Devs,
 
-The Docker image size is 947MB
+The updated Docker image size is 132MB
 
 ## The Steps to follow in order to Build and Start the Docker Container
 
