@@ -29,3 +29,11 @@ docker-compose build
 ```
 docker-compose up
 ```
+
+## API endpoints present
+
+    ```
+    http://127.0.0.1:8000/validate_finite_values  # task_1 api
+    http://127.0.0.1:8000/validate_numeric_values # task_2 api
+    ```
+### The Postman API collection is the docs folder.
