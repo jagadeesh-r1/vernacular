@@ -26,7 +26,6 @@ def finite_values_entity(request) -> Response:
     pick_first = data["pick_first"]
     reuse = data["reuse"]
     result = validate_finite_values_entity(values,supported_values,invalid_trigger,key,support_multiple,pick_first,reuse = reuse)
-    print(result)
     return Response(result)
 
 @csrf_exempt
@@ -44,7 +43,6 @@ def numeric_values_entity(request) -> Response:
     pick_first = data["pick_first"]
     var_name = data["var_name"]
     result = validate_numeric_entity(values,invalid_trigger,key,support_multiple,pick_first,constraint,var_name)
-    print(result)
     return Response(result)
 
 
